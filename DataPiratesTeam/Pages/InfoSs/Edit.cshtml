@@ -1,0 +1,85 @@
+@page
+@model DataPiratesTeam.Pages.InfoSs.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="InfoS.ID" />
+            <div class="form-group">
+                <label asp-for="InfoS.Name" class="control-label"></label>
+                <input asp-for="InfoS.Name" class="form-control" />
+                <span asp-validation-for="InfoS.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InfoS.Email" class="control-label"></label>
+                <input asp-for="InfoS.Email" class="form-control" />
+                <span asp-validation-for="InfoS.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InfoS.Phone" class="control-label"></label>
+                <input asp-for="InfoS.Phone" class="form-control" />
+                <span asp-validation-for="InfoS.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InfoS.Address" class="control-label"></label>
+                <input asp-for="InfoS.Address" class="form-control" />
+                <span asp-validation-for="InfoS.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InfoS.Major" class="control-label"></label>
+                <input asp-for="InfoS.Major" class="form-control" />
+                <span asp-validation-for="InfoS.Major" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InfoS.Degree" class="control-label"></label>
+                <input asp-for="InfoS.Degree" class="form-control" />
+                <span asp-validation-for="InfoS.Degree" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InfoS.University" class="control-label"></label>
+                <input asp-for="InfoS.University" class="form-control" />
+                <span asp-validation-for="InfoS.University" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InfoS.Interest" class="control-label"></label>
+                <input asp-for="InfoS.Interest" class="form-control" />
+                <span asp-validation-for="InfoS.Interest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InfoS.Work_Experience" class="control-label"></label>
+                <input asp-for="InfoS.Work_Experience" class="form-control" />
+                <span asp-validation-for="InfoS.Work_Experience" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InfoS.Gpa" class="control-label"></label>
+                <input asp-for="InfoS.Gpa" class="form-control" />
+                <span asp-validation-for="InfoS.Gpa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InfoS.Graduation_Date" class="control-label"></label>
+                <input asp-for="InfoS.Graduation_Date" class="form-control" />
+                <span asp-validation-for="InfoS.Graduation_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

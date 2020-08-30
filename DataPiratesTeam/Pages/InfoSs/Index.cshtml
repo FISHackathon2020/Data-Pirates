@@ -1,0 +1,96 @@
+@page
+@model DataPiratesTeam.Pages.InfoSs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Student Database</h1>
+
+<p>
+    <a asp-page="Create">Add Student</a>
+</p>
+
+<form>
+    <p>
+        <select asp-for="InfoSDegree" asp-items="Model.Degrees">
+            <option value="">All</option>
+        </select>
+
+       Interest Area: <input type="text" asp-for="SearchString" />
+    <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InfoS[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InfoS[0].Email)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.InfoS[0].Major)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InfoS[0].Degree)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.InfoS[0].Interest)
+            </th>
+
+
+
+
+
+           
+            <th>
+                @Html.DisplayNameFor(model => model.InfoS[0].Graduation_Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.InfoS) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+
+
+
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Major)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Degree)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Interest)
+            </td>
+
+
+
+
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Graduation_Date)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
